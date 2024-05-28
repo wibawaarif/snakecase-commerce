@@ -4,7 +4,7 @@ import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Phone } from "lucide-react";
+import Phone from "./Phone";
 
 const PHONES = [
   "/testimonials/1.jpg",
@@ -64,15 +64,13 @@ function ReviewColumn({
       className={cn("animate-marquee space-y-8 py-4", className)}
       style={{ "--marquee-duration": duration } as React.CSSProperties}
     >
-      {
-        reviews.concat(reviews).map((imgSrc, reviewIndex) => (
-          <Review
-            key={reviewIndex}
-            className={reviewClassName?.(reviewIndex % reviews.length)}
-            imgSrc={imgSrc}
-          />
-        ))
-      }
+      {reviews.concat(reviews).map((imgSrc, reviewIndex) => (
+        <Review
+          key={reviewIndex}
+          className={reviewClassName?.(reviewIndex % reviews.length)}
+          imgSrc={imgSrc}
+        />
+      ))}
     </div>
   );
 }
@@ -149,6 +147,8 @@ function ReviewGrid() {
           />
         </>
       ) : null}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-100" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-100" />
     </div>
   );
 }
