@@ -20,7 +20,7 @@ export default function Home() {
 
               <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl">
                 Your Image on a{" "}
-                <span className="bg-cyan-600 px-2 text-white">Custom</span>{" "}
+                <span className="bg-orange-500 px-2 text-white">Custom</span>{" "}
                 Phone Case
               </h1>
               <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
@@ -33,19 +33,19 @@ export default function Home() {
               <ul className="mt-8 space-y-2 text-left font-medium flex flex-col items-center sm:items-start">
                 <div className="space-y-2">
                   <li className="flex gap-1.5 items-center text-left">
-                    <Check className="h-5 w-5 shrink-0 text-cyan-600" />
+                    <Check className="h-5 w-5 shrink-0 text-orange-500" />
                     Waterproof material
                   </li>
                   <li className="flex gap-1.5 items-center text-left">
-                    <Check className="h-5 w-5 shrink-0 text-cyan-600" />
+                    <Check className="h-5 w-5 shrink-0 text-orange-500" />
                     High-quality, durable material
                   </li>
                   <li className="flex gap-1.5 items-center text-left">
-                    <Check className="h-5 w-5 shrink-0 text-cyan-600" />5 year
+                    <Check className="h-5 w-5 shrink-0 text-orange-500" />5 year
                     print guarantee
                   </li>
                   <li className="flex gap-1.5 items-center text-left">
-                    <Check className="h-5 w-5 shrink-0 text-cyan-600" />
+                    <Check className="h-5 w-5 shrink-0 text-orange-500" />
                     Modern iPhone models supported
                   </li>
                 </div>
@@ -82,11 +82,11 @@ export default function Home() {
 
                 <div className="flex flex-col justify-between items-center sm:items-start">
                   <div className="flex gap-0.5">
-                    <Star className="h-4 w-4 text-cyan-600 fill-cyan-600" />
-                    <Star className="h-4 w-4 text-cyan-600 fill-cyan-600" />
-                    <Star className="h-4 w-4 text-cyan-600 fill-cyan-600" />
-                    <Star className="h-4 w-4 text-cyan-600 fill-cyan-600" />
-                    <Star className="h-4 w-4 text-cyan-600 fill-cyan-600" />
+                    <Star className="h-4 w-4 text-orange-500 fill-orange-500" />
+                    <Star className="h-4 w-4 text-orange-500 fill-orange-500" />
+                    <Star className="h-4 w-4 text-orange-500 fill-orange-500" />
+                    <Star className="h-4 w-4 text-orange-500 fill-orange-500" />
+                    <Star className="h-4 w-4 text-orange-500 fill-orange-500" />
                   </div>
 
                   <p>
@@ -121,7 +121,7 @@ export default function Home() {
               What our{" "}
               <span className="relative px-2">
                 customers{" "}
-                <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-7 text-cyan-500" />
+                <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-7 text-orange-500" />
               </span>{" "}
               say
             </h2>
@@ -131,11 +131,11 @@ export default function Home() {
           <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
             <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
               <div className="flex gap-0.5 mb-2">
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
               </div>
               <div className="text-lg leading-8">
                 <p>
@@ -160,7 +160,7 @@ export default function Home() {
                 <div className="flex flex-col">
                   <p className="font-semibold">Arif W</p>
                   <div className="flex gap-1.5 items-center text-zinc-600">
-                    <Check className="h-4 w-4 stroke-[3px] text-cyan-600" />
+                    <Check className="h-4 w-4 stroke-[3px] text-orange-500" />
                     <p className="text-sm">Verified Purchase</p>
                   </div>
                 </div>
@@ -170,11 +170,11 @@ export default function Home() {
             {/* second user review */}
             <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
               <div className="flex gap-0.5 mb-2">
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
-                <Star className="h-5 w-5 text-cyan-600 fill-cyan-600" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
+                <Star className="h-5 w-5 text-orange-500 fill-orange-500" />
               </div>
               <div className="text-lg leading-8">
                 <p>
@@ -196,7 +196,7 @@ export default function Home() {
                 <div className="flex flex-col">
                   <p className="font-semibold">Karina</p>
                   <div className="flex gap-1.5 items-center text-zinc-600">
-                    <Check className="h-4 w-4 stroke-[3px] text-cyan-600" />
+                    <Check className="h-4 w-4 stroke-[3px] text-orange-500" />
                     <p className="text-sm">Verified Purchase</p>
                   </div>
                 </div>
@@ -217,7 +217,7 @@ export default function Home() {
             <div className="mx-auto max-w-2x sm:text-center">
               <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
                 Upload your photo and get{" "}
-                <span className="relative px-2 bg-cyan-600 text-white">
+                <span className="relative px-2 bg-orange-500 text-white">
                   your own case{" "}
                 </span>{" "}
                 now
@@ -245,19 +245,19 @@ export default function Home() {
 
           <ul className="mx-auto mt-12 max-w-prose sm:text-lg space-y-2 w-fit">
             <li className="w-fit">
-              <Check className="w-5 h-5 text-cyan-600 inline mr-1.5" />
+              <Check className="w-5 h-5 text-orange-500 inline mr-1.5" />
               High-quality sillicone material
             </li>
             <li className="w-fit">
-              <Check className="w-5 h-5 text-cyan-600 inline mr-1.5" />
+              <Check className="w-5 h-5 text-orange-500 inline mr-1.5" />
               Scratch- and fingerprint resistant coating
             </li>
             <li className="w-fit">
-              <Check className="w-5 h-5 text-cyan-600 inline mr-1.5" />
+              <Check className="w-5 h-5 text-orange-500 inline mr-1.5" />
               Wireless charging compatible
             </li>
             <li className="w-fit">
-              <Check className="w-5 h-5 text-cyan-600 inline mr-1.5" />
+              <Check className="w-5 h-5 text-orange-500 inline mr-1.5" />
               5 year print warranty
             </li>
 
