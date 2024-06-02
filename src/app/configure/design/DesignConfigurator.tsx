@@ -22,10 +22,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, ChevronsUpDown } from "lucide-react";
+import { ArrowRight, Check, ChevronsUpDown, Loader2 } from "lucide-react";
 import { BASE_PRICE } from "@/config/products";
 import { useUploadThing } from "@/lib/uploadthing";
 import { useToast } from "@/components/ui/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { SaveConfigArgs, saveConfig as _saveConfig } from "./actions";
+import { useRouter } from "next/navigation";
 
 interface DesignConfiguratorProps {
   configId: string;
@@ -38,7 +41,30 @@ const DesignConfigurator = ({
   imageUrl,
   imageDimensions,
 }: DesignConfiguratorProps) => {
+  const [lastSectionLoading, setLastSectionLoading] = useState<boolean>(false);
   const { toast } = useToast();
+  const router = useRouter()
+  
+  const {mutate: saveConfig} = useMutation({
+    mutationKey: ["save-config"],
+    mutationFn: async (args: SaveConfigArgs) => {
+      setLastSectionLoading(true)
+      await Promise.all([saveConfiguration(), _saveConfig(args)])
+      setLastSectionLoading(false)
+    },
+    onError: () => {
+      toast({
+        title: "Something went wrong!",
+        description: "There was an error on our end. Please try again later.",
+        variant: "destructive"
+      })
+    },
+    onSuccess: () => {
+      router.push(`/configure/preview?id=${configId}`)
+    }
+
+  })
+
   const [options, setOptions] = useState<{
     color: (typeof COLORS)[number];
     model: (typeof MODELS.options)[number];
@@ -366,8 +392,14 @@ const DesignConfigurator = ({
                 )}
               </p>
 
-              <Button onClick={saveConfiguration} size="sm" className="w-full">
-                Continue <ArrowRight className="w-4 h-4 ml-1.5 inline" />
+              <Button onClick={() => saveConfig({
+                configId,
+                color: options.color.value,
+                finish: options.finish.value,
+                material: options.material.value,
+                model: options.model.value
+              })} size="sm" className="w-full">
+                {lastSectionLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Continue'} <ArrowRight className="w-4 h-4 ml-1.5 inline" />
               </Button>
             </div>
           </div>
