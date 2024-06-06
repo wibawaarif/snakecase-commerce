@@ -133,7 +133,7 @@ function ReviewGrid() {
             msPerPixel={10}
           />
           <ReviewColumn
-            reviews={[...column2, column3[1]]}
+            reviews={[...column2, ...column3[1]]}
             className="hidden md:block"
             reviewClassName={(reviewIndex) =>
               reviewIndex >= column2.length ? "lg:hidden" : ""

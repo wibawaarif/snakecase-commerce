@@ -316,6 +316,7 @@ const DesignConfigurator = ({
                 {[MATERIALS, FINISHES].map(
                   ({ name, options: selectableOptions }) => (
                     <RadioGroup
+                      key={name}
                       className={name}
                       value={options[name]}
                       onChange={(val) => {
