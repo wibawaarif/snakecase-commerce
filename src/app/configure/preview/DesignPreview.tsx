@@ -14,13 +14,14 @@ import { createCheckoutSession } from "./action";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import LoginModal from "@/components/LoginModal";
 
 const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const { user } = useKindeBrowserClient();
   const router = useRouter();
   const { toast } = useToast();
   const { id } = configuration;
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false)
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
   useEffect(() => setShowConfetti(true));
@@ -60,12 +61,12 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const handleCheckout = () => {
     if (user) {
       // create payment session
-      createPaymentSession({configId: id})
+      createPaymentSession({ configId: id });
     } else {
       //login
       // save to local storage
       localStorage.setItem("configurationId", id);
-      setIsLoginModalOpen(true)
+      setIsLoginModalOpen(true);
     }
   };
 
@@ -81,7 +82,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
         />
       </div>
 
-      <LoginModal />
+      <LoginModal isOpen={isLoginModalOpen} setIsOpen={setIsLoginModalOpen} />
 
       <div className="mt-20 grid grid-cols-1 text-sm sm:grid-cols-12 sm:grid-rows-1 sm:gap-x-6 md:gap-x-8 lg:gap-x-12">
         <div className="sm:col-span-4 md:col-span-3 md:row-span-2 md:row-end-2">
@@ -162,9 +163,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
 
             <div className="mt-8 flex justify-end pb-12">
               <Button
-                onClick={() =>
-                  createPaymentSession({ configId: configuration.id })
-                }
+                onClick={() => handleCheckout()}
                 className="px-4 sm:px-6 lg:px-8"
               >
                 Check out <ArrowRight className="h-4 w-4 ml-1.5 inline" />
