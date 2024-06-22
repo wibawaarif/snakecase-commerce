@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { CaseColor } from "@prisma/client";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const PhonePreview = ({
   croppedImageUrl,
@@ -18,6 +18,21 @@ const PhonePreview = ({
     height: 0,
     width: 0,
   });
+
+  const handleResize = () => {
+    if (!ref.current) return
+    const { width, height } = ref.current.getBoundingClientRect()
+    setRenderedDimensions({width, height})
+
+  }
+
+  useEffect(() => {
+    handleResize()
+
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener("resize", handleResize)
+  }, [ref.current]);
 
   let caseBackgroundColor = 'bg-zinc-950'
 
