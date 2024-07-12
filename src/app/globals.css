@@ -49,6 +49,10 @@
       --ring: 20.5 90.2% 48.2%;
     }
   }
+
+.phone-skew {
+  transform: perspective(400px) rotateY(3deg) skewX(11.1deg) skewY(-10.9deg);
+}
   
 
 
